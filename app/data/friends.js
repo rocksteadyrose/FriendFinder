@@ -79,6 +79,40 @@ var friendsArray = [{
         2,
         3
       ]
+  },
+
+  {
+    "name":"Laurie",
+    "photo":"http://datapopalliance.org/wp-content/uploads/2017/10/JRicard.jpg",
+    "scores":[
+        1,
+        3,
+        2,
+        5,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3
+      ]
+  },
+
+  {
+    "name":"Laurie",
+    "photo":"http://datapopalliance.org/wp-content/uploads/2017/10/JRicard.jpg",
+    "scores":[
+        4,
+        2,
+        1,
+        5,
+        3,
+        2,
+        2,
+        4,
+        3,
+        1
+      ]
   }
   ]
 

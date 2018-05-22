@@ -17,42 +17,55 @@ module.exports = function (app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/friends", function (req, res) {
-    res.json(friendsData);
+    // res.json(friendsData);
+
     var othersUserScores = [];
-    var allScores = [];
+    var totalDifference = [];
     var othersScores;
     var subtractScores;
-    var totalDifference = 0;
     var currentUserIndex = friendsData.length - 1;
+    var otherUsers = [];
     var currentUserScores = friendsData[currentUserIndex].scores;
 
-    console.log(currentUserScores)
+    // console.log(friendsData);
 
     //Get other user score info
     for (i = 0; i < currentUserIndex; i++) {
       othersScores = friendsData[i].scores;
-      othersUserScores.push(othersScores) 
+      var others = friendsData[i];
+      othersUserScores.push(othersScores)
+      otherUsers.push(others)
     }
-    console.log(othersUserScores)
-
+    console.log(otherUsers)
 
     for (i = 0; i < othersUserScores.length; i++) {
       var compareArray = [];
       var otherUsersResults = othersUserScores[i];
+      // othersUserScores.length: 4
 
       for (j = 0; j < otherUsersResults.length; j++) {
-        var subtractScores = Math.abs(currentUserScores[j]- otherUsersResults[j]);
+        var subtractScores = Math.abs(currentUserScores[j] - otherUsersResults[j]);
         compareArray.push(subtractScores)
-        totalDifference += compareArray[j];
-        console.log(compareArray)
-        
+        // console.log("compare array: " + compareArray)
+        // otherUsersResults.length: 10
       }
-      console.log("total difference: " + totalDifference)
- }
 
+      var difference = compareArray.reduce(
+        function (total, num) { return total + num }
+        , 0);
+      // console.log("total difference: " + friendsData[i].name + " " + difference)
+      totalDifference.push(difference)
+      // console.log(totalDifference)
+    }
+    // console.log(Math.min(difference))
+    var min = Math.min.apply(null, totalDifference);
+    var selectedPersonIndex = totalDifference.indexOf(min);
+    console.log(selectedPersonIndex)
+
+    var match = otherUsers[selectedPersonIndex];
+    console.log(match)
 
   });
-
 
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
@@ -67,10 +80,9 @@ module.exports = function (app) {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
 
+    // res.json(true);
 
-    //   tableData.push(req.body);
-    //   res.json(true);
-    // }
+
     // else {
     //   waitListData.push(req.body);
     //   res.json(false);
@@ -79,14 +91,11 @@ module.exports = function (app) {
   });
 
   // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
 
   app.post("/api/clear", function () {
     // Empty out the arrays of data
-    //   tableData = [];
+    friendsData = [];
     //   waitListData = [];
 
-    // console.log(friendsData);
   });
 };

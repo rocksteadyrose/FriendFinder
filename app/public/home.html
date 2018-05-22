@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FriendFinder</title>
+  <title>FriendFinder!</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -19,7 +19,7 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1><i class="fa fa-facebook-square" aria-hidden="true"></i> Friend Finder</h1>
+      <h1 class="fa fa-facebook-square">Friend Finder</h1>
       <hr>
       <h2>Answer a few basic questions. </h2>
       <h2>Then find the friend with the greatest compatibility!</h2>
@@ -33,7 +33,8 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+        <p><a href="/api/friends" target="_blank">API Friends List</a> |
+        <a href="/api/clear" target="_blank" id="clear">Clear API</a> |<a href="https://github.com/rocksteadyrose/friendfinder" target="_blank"> GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -42,4 +43,23 @@
 
 </body>
 
+<script>
+
+function clearAPI() {
+
+    var currentURL = window.location.origin;
+    $.ajax({ url: currentURL + "/api/clear", method: "POST" });
+
+  }
+
+  $("#clear").on("click", function() {
+    alert("Clearing...");
+    clearAPI();
+
+    // Refresh the page after data is cleared
+    location.reload();
+
+  });
+
+</script>
 </html>
