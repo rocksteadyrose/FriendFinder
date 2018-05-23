@@ -7,11 +7,15 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+    <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
+  
+    <!-- Chosen -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  
 
 </head>
 
@@ -188,29 +192,30 @@
 
     </div>
 
-    <div id="results" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+    <div id="results" class="modal">
 
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal">
+
+                    </button>
                     <h2 class="modal-title">
                         <strong>Best Match</strong>
                     </h2>
                 </div>
                 <div class="modal-body">
-                    <h2 id="personname"></h2>
-                    <img id="personimg" alt="">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img" alt="Match Photo">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-            </div>
 
         </div>
     </div>
 
 </body>
+</html>
 
 <script type="text/javascript">
     var config = {
@@ -270,7 +275,7 @@
         }
 
         if (validateForm()) {
-            var friendsData = {
+            var formData = {
                 name: $("#name").val(),
                 photo: $("#photo").val(),
                 scores: [
@@ -287,12 +292,17 @@
                 ]
             };
 
-            $.post("/api/friends", friendsData, function (data) {
 
-                $("#personname").text(data.name);
-                $("#personimg").attr("src", data.photo);
+            $.post("/api/friends", formData, function (data) {
 
-                $("#results").modal("toggle");
+                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                console.log(data.matchName)
+                console.log(data.matchPic)
+                $("#match-name").text(data.matchName);
+                $("#match-img").attr("src", data.matchPic);
+
+                // Show the modal with the best match
+                $("#results").modal("show");
 
             });
         } else {
@@ -300,48 +310,5 @@
         }
     });
 
-    function getMatch() {
-        var currentURL = window.location.origin;
-
-        $.ajax({ url: currentURL + "/api/friends", method: "GET" })
-            .then(function (friendsData) {
-                var othersUserScores = [];
-                var othersScores;
-                var subtractScores;
-                var currentUserIndex = friendsData.length - 1;
-                var currentUserScores = friendsData[currentUserIndex].scores;
-
-                console.log(friendsData);
-
-                //Get other user score info
-                for (i = 0; i < currentUserIndex; i++) {
-                    othersScores = friendsData[i].scores;
-                    othersUserScores.push(othersScores)
-                    // currentUserIndex: 4
-                }
-
-                for (i = 0; i < othersUserScores.length; i++) {
-                    var compareArray = [];
-                    var otherUsersResults = othersUserScores[i];
-                    // othersUserScores.length: 4
-
-                    for (j = 0; j < otherUsersResults.length; j++) {
-                        var subtractScores = Math.abs(currentUserScores[j] - otherUsersResults[j]);
-                        compareArray.push(subtractScores)
-                        console.log("compare array: " + compareArray)
-                        // otherUsersResults.length: 10
-                    }
-
-                    var totalDifference = compareArray.reduce(
-                        function (total, num) { return total + num }
-                        , 0);
-                    console.log("total difference: " + friendsData[i].name + " " + totalDifference)
-                }
-                console.log(Math.min(totalDifference))
-            });
-    }
-
-    getMatch();
 </script>
 
-</html>
