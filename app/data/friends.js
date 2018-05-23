@@ -1,6 +1,21 @@
 var friendsArray = [{
-    "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Leia",
+    "photo":"https://i.imgur.com/M9D3eYV.png",
+    "scores":[
+        3,
+        5,
+        5,
+        1,
+        5,
+        1,
+        5,
+        3,
+        3,
+        4
+      ]
+  },{
+    "name":"Henry",
+    "photo":"http://www.wearefamilydog.com/wp-content/uploads/2018/02/IMG_8750.jpg",
     "scores":[
         5,
         1,
@@ -15,102 +30,18 @@ var friendsArray = [{
       ]
   },
   {
-    "name":"Leslie",
-    "photo":"https://avatars0.githubusercontent.com/u/34491285?s=400&u=82f8dd5305a43b0e3be34cc670de92b1e952e9e4&v=4",
-    "scores":[
-        3,
-        2,
-        1,
-        5,
-        3,
-        2,
-        1,
-        4,
-        5,
-        2
-      ]
-  },
-  {
-    "name":"Cecelia",
-    "photo":"http://texaneyecare.com/wp-content/uploads/2016/04/Dr-Cecilia-Sanchez.jpg",
-    "scores":[
-        1,
-        3,
-        4,
-        1,
-        2,
-        3,
-        1,
-        4,
-        5,
-        3
-      ]
-  },
-
-  {
-    "name":"Alex",
-    "photo":"https://chartergrowthfund.org/wp-content/uploads/2017/09/Alex-Hernandez.jpg",
+    "name":"Sassy",
+    "photo":"http://www.dogsinduds.com/pictures/sassy-pixie.jpg",
     "scores":[
         2,
         3,
-        3,
         1,
-        4,
-        5,
         1,
         2,
-        1,
-        3
-      ]
-  },
-
-  {
-    "name":"Julie",
-    "photo":"http://datapopalliance.org/wp-content/uploads/2017/10/JRicard.jpg",
-    "scores":[
-        4,
-        2,
-        0,
         5,
         2,
         1,
-        1,
         2,
-        2,
-        3
-      ]
-  },
-
-  {
-    "name":"Laurie",
-    "photo":"http://datapopalliance.org/wp-content/uploads/2017/10/JRicard.jpg",
-    "scores":[
-        1,
-        3,
-        2,
-        5,
-        1,
-        2,
-        2,
-        2,
-        3,
-        3
-      ]
-  },
-
-  {
-    "name":"Laurie",
-    "photo":"http://datapopalliance.org/wp-content/uploads/2017/10/JRicard.jpg",
-    "scores":[
-        4,
-        2,
-        1,
-        5,
-        3,
-        2,
-        2,
-        4,
-        3,
         1
       ]
   }

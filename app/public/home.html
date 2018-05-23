@@ -4,12 +4,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FriendFinder!</title>
+  <title>Fido Finder!</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 </head>
@@ -19,22 +18,22 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="fa fa-facebook-square">Friend Finder</h1>
+      <h1 class="fa fa-paw">Fido Finder</h1>
       <hr>
-      <h2>Answer a few basic questions. </h2>
-      <h2>Then find the friend with the greatest compatibility!</h2>
+      <h2>Answer a few questions for your pooch. </h2>
+      <h2>Then find them a BFF (best furry friend)!</h2>
       <br>
 
       <div>
-        <a href="/survey"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
+        <a href="/survey"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Questions</h4></button></a>
       </div>
 
     </div>
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends" target="_blank">API Friends List</a> |
-        <a href="/api/clear" target="_blank" id="clear">Clear API</a> |<a href="https://github.com/rocksteadyrose/friendfinder" target="_blank"> GitHub Repo</a></p>
+        <p><a href="/api/friends" target="_blank">API Fido Friends List</a> |
+        <a href="https://github.com/rocksteadyrose/friendfinder" target="_blank"> GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -43,23 +42,4 @@
 
 </body>
 
-<script>
-
-function clearAPI() {
-
-    var currentURL = window.location.origin;
-    $.ajax({ url: currentURL + "/api/clear", method: "POST" });
-
-  }
-
-  $("#clear").on("click", function() {
-    alert("Clearing...");
-    clearAPI();
-
-    // Refresh the page after data is cleared
-    location.reload();
-
-  });
-
-</script>
 </html>

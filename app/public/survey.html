@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>FriendFinder</title>
+    <title>Fido Finder!</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -12,7 +12,7 @@
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   
-    <!-- Chosen -->
+    <!-- Chosen is a jQuery plugin that changes the selections for the user -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
   
@@ -24,24 +24,25 @@
     <div class="container">
 
         <h2>Survey Questions</h2>
+
         <hr>
 
         <h3>
-            <strong>About You</strong>
+            <strong>About Your Pet</strong>
         </h3>
-        <h4>Name (Required)</h4>
-        <input type="text" id="name" class="form-control" required>
+        <h4>Pet's Name (Required)</h4>
+        <input type="text" id="name" class="form-control" value="Scout" required>
 
-        <h4>Link to Photo (Required)</h4>
-        <input type="text" id="photo" class="form-control" required>
+        <h4>Link to Pet's Photo (Required)</h4>
+        <input type="text" id="photo" class="form-control" value="http://yourphoto.jpg" required>
 
         <hr>
 
         <h3>
             <strong>Question 1</strong>
         </h3>
-        <h4>I'd rather spend my time lounging on the couch than out socializing with people.</h4>
-        <select class="chosen-select" id="q1">
+        <h4>My dog goes crazy when he hears the word W-A-L-K.</h4>
+        <select class="chosen-select" id="question1">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -53,8 +54,8 @@
         <h3>
             <strong>Question 2</strong>
         </h3>
-        <h4>I love getting to know new people.</h4>
-        <select class="chosen-select" id="q2">
+        <h4>My dog LOVES to eat.</h4>
+        <select class="chosen-select" id="question2">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -67,8 +68,8 @@
         <h3>
             <strong>Question 3</strong>
         </h3>
-        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-        <select class="chosen-select" id="q3">
+        <h4>My dog and his v-e-t go together like peanut butter and spinach.</h4>
+        <select class="chosen-select" id="question3">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -81,8 +82,8 @@
         <h3>
             <strong>Question 4</strong>
         </h3>
-        <h4>You rarely do something just out of sheer curiosity.</h4>
-        <select class="chosen-select" id="q4">
+        <h4>My dog loves water more than he loves me.</h4>
+        <select class="chosen-select" id="question4">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -95,8 +96,8 @@
         <h3>
             <strong>Question 5</strong>
         </h3>
-        <h4>People can rarely upset you.</h4>
-        <select class="chosen-select" id="q5">
+        <h4>The mailman is my dog's worst enemy.</h4>
+        <select class="chosen-select" id="question5">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -109,8 +110,8 @@
         <h3>
             <strong>Question 6</strong>
         </h3>
-        <h4>It is often difficult for you to relate to other people’s feelings.</h4>
-        <select class="chosen-select" id="q6">
+        <h4>My dog is extremely pupular with other dogs and is basically a social pupperfly.</h4>
+        <select class="chosen-select" id="question6">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -123,8 +124,8 @@
         <h3>
             <strong>Question 7</strong>
         </h3>
-        <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
-        <select class="chosen-select" id="q7">
+        <h4>When my dog isn't lounging on the couch, you can find him hogging the bed.</h4>
+        <select class="chosen-select" id="question7">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -136,8 +137,8 @@
         <h3>
             <strong>Question 8</strong>
         </h3>
-        <h4>You rarely get carried away by fantasies and ideas.</h4>
-        <select class="chosen-select" id="q8">
+        <h4>Toys run away from my dog for fear that they'll die.</h4>
+        <select class="chosen-select" id="question8">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -149,8 +150,8 @@
         <h3>
             <strong>Question 9</strong>
         </h3>
-        <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
-        <select class="chosen-select" id="q9">
+        <h4>Squirrels = "OAIEHEOAIHAEOGNEAIOGAEOIGEAIOHTEOAIFJAOEFMEAO!!!!!!!!!!!"</h4>
+        <select class="chosen-select" id="question9">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -162,8 +163,8 @@
         <h3>
             <strong>Question 10</strong>
         </h3>
-        <h4>You feel more energetic after spending time with a group of people.</h4>
-        <select class="chosen-select" id="q10">
+        <h4>My dog's idea of a romantic evening includes a bowl of pupsghetti, and a showing of Jurassic Bark with some pupcorn (preferably with someone they can call their punny... #LOL).</h4>
+        <select class="chosen-select" id="question10">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -176,15 +177,14 @@
         <br>
 
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
-            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-paw"></i>
             Submit</button>
 
         <hr>
         <footer class="footer">
             <div class="container">
                 <p>
-                    <a href="/api/friends" target="_blank">API Friends List</a> |
-                    <a href="/api/clear" target="_blank" id="clear"> Clear API</a> |
+                    <a href="/api/friends" target="_blank">API Fido Friends List</a> |
                     <a href="https://github.com/rocksteadyrose/friendfinder" target="_blank"> GitHub Repo</a>
                 </p>
             </div>
@@ -233,23 +233,7 @@
             width: "95%"
         }
     };
-
-    function clearAPI() {
-
-        var currentURL = window.location.origin;
-        $.ajax({ url: currentURL + "/api/clear", method: "POST" });
-
-    }
-
-    $("#clear").on("click", function () {
-        alert("Clearing...");
-        clearAPI();
-
-        // Refresh the page after data is cleared
-        location.reload();
-
-    });
-
+    
     for (var selector in config) {
         $(selector).chosen(config[selector]);
     }
@@ -279,31 +263,26 @@
                 name: $("#name").val(),
                 photo: $("#photo").val(),
                 scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
+                    $("#question1").val(),
+                    $("#question2").val(),
+                    $("#question3").val(),
+                    $("#question4").val(),
+                    $("#question5").val(),
+                    $("#question6").val(),
+                    $("#question7").val(),
+                    $("#question8").val(),
+                    $("#question9").val(),
+                    $("#question10").val()
                 ]
             };
-
-
-            $.post("/api/friends", formData, function (data) {
-
-                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                console.log(data.matchName)
-                console.log(data.matchPic)
+            var currentURL = window.location.origin;
+            //This data is an object from the match in JSON format as a post request with userdata from above.
+            //Grab our current URL and post to the /api/friends route. 
+            //Pass in the formData as the request for the user
+            $.post(currentURL + "/api/friends", formData, function (data) {
                 $("#match-name").text(data.matchName);
                 $("#match-img").attr("src", data.matchPic);
-
-                // Show the modal with the best match
-                $("#results").modal("show");
-
+                $("#results").modal("toggle");
             });
         } else {
             alert("Please fill out all fields before submitting!");

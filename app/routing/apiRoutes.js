@@ -17,9 +17,8 @@ module.exports = function (app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/friends", function (req, res) {
+    //Build a route where you can view the friends
     res.json(friendsData);
-
-
   });
 
   // API POST Requests
@@ -31,65 +30,38 @@ module.exports = function (app) {
   // ---------------------------------------------------------------------------
 
   app.post("/api/friends", function (req, res) {
-    // req.body is available since we're using the body-parser middleware
-    friendsData.push(req.body);
+    // This is the user data coming from the user. req.body is available since we're using the body-parser middleware
+    var userInfo = req.body;
+    var userScore = req.body.scores;
+    var others = friendsData;
+    var sums = [];
 
-    var othersUserScores = [];
-    var totalDifference = [];
-    var othersScores;
-    var subtractScores;
-    var currentUserIndex = friendsData.length - 1;
-    var otherUsers = [];
-    var currentUserScores = friendsData[currentUserIndex].scores;
+    //Loop through the api data
+    for (i = 0; i < friendsData.length; i++) {
+      var totalDifference = [];
+      var otherScores = friendsData[i].scores;
 
-    // console.log(friendsData);
-
-    //Get other user score info
-    for (i = 0; i < currentUserIndex; i++) {
-      othersScores = friendsData[i].scores;
-      var others = friendsData[i];
-      othersUserScores.push(othersScores)
-      otherUsers.push(others)
-    }
-    // console.log(otherUsers)
-
-    for (i = 0; i < othersUserScores.length; i++) {
-      var compareArray = [];
-      var otherUsersResults = othersUserScores[i];
-      // othersUserScores.length: 4
-
-      for (j = 0; j < otherUsersResults.length; j++) {
-        var subtractScores = Math.abs(currentUserScores[j] - otherUsersResults[j]);
-        compareArray.push(subtractScores)
-        // console.log("compare array: " + compareArray)
-        // otherUsersResults.length: 10
+      //Loop through the scores array of this data
+      for (j = 0; j < otherScores.length; j++) {
+        var differences = Math.abs(parseInt(userScore[j]) - parseInt(otherScores[j]));
+        totalDifference.push(differences)
       }
-
-      var difference = compareArray.reduce(
+      var sumofDifferences = totalDifference.reduce(
         function (total, num) { return total + num }
         , 0);
-      // console.log("total difference: " + friendsData[i].name + " " + difference)
-      totalDifference.push(difference)
-      // console.log(totalDifference)
+      sums.push(sumofDifferences)
     }
-    // console.log(Math.min(difference))
-    var min = Math.min.apply(null, totalDifference);
-    var selectedPersonIndex = totalDifference.indexOf(min);
-    // console.log(selectedPersonIndex)
+    var min = Math.min.apply(null, sums);
+    var selectedDogIndex = sums.indexOf(min);
 
-    var match = otherUsers[selectedPersonIndex];
-    var matchName = otherUsers[selectedPersonIndex].name;
-    var matchPic = otherUsers[selectedPersonIndex].photo;
+    var match = others[selectedDogIndex];
+    var matchName = others[selectedDogIndex].name;
+    var matchPic = others[selectedDogIndex].photo;
 
-    res.json({matchName, matchPic});
-  });
+    //send the match to the front-end/json for the module
+    res.json({ matchName, matchPic });
 
-  // ---------------------------------------------------------------------------
-
-  app.post("/api/clear", function () {
-    // Empty out the arrays of data
-    friendsData = [];
-    //   waitListData = [];
-
+    //Push the new user data into the api friends array after we've looped through
+    friendsData.push(req.body);
   });
 };
