@@ -1,7 +1,7 @@
 //====================================================================
 // LOAD DATA
 // We are linking our routes to a series of "data" sources.
-// 
+// API Routes are for our data. That helps deterine what data the user sees as well as what data the user can post to our server to store
 
 var friendsData = require("../data/friends");
 
@@ -13,7 +13,7 @@ module.exports = function (app) {
   // API GET Requests
   // Below code handles when users "visit" a page.
   // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
+  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data)
   // ---------------------------------------------------------------------------
 
   app.get("/api/friends", function (req, res) {

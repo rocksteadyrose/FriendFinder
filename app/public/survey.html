@@ -12,7 +12,7 @@
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   
-    <!-- Chosen is a jQuery plugin that changes the selections for the user -->
+    <!-- Chosen is a jQuery plugin that changes the selections for the user. Makes long, unwieldy select boxes much more user-friendly. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
   
@@ -177,14 +177,15 @@
         <br>
 
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
-            <i class="fa fa-paw"></i>
+            <strong class="fa fa-paw"></strong>
             Submit</button>
 
         <hr>
         <footer class="footer">
             <div class="container">
                 <p>
-                    <a href="/api/friends" target="_blank">API Fido Friends List</a> |
+                    <a href="/api/friends" target="_blank">API Fido Friends List</a>             
+                    <strong class="fa fa-paw"></strong>
                     <a href="https://github.com/rocksteadyrose/friendfinder" target="_blank"> GitHub Repo</a>
                 </p>
             </div>
@@ -192,8 +193,8 @@
 
     </div>
 
-    <div id="results" class="modal">
-
+    <div id="results" class="modal fade" role="dialog">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">
@@ -210,7 +211,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-
+            </div>
         </div>
     </div>
 
@@ -276,9 +277,11 @@
                 ]
             };
             var currentURL = window.location.origin;
-            //This data is an object from the match in JSON format as a post request with userdata from above.
+            //This data is an object from the match in JSON format as a post request with formData from above.
             //Grab our current URL and post to the /api/friends route. 
             //Pass in the formData as the request for the user
+            //Connects server side to client side
+            //The request from the client is the formData and the response from the server is data
             $.post(currentURL + "/api/friends", formData, function (data) {
                 $("#match-name").text(data.matchName);
                 $("#match-img").attr("src", data.matchPic);
