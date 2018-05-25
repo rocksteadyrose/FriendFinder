@@ -201,8 +201,6 @@ body {
  
 @media (max-width : 375px) {
     .myjumbotron {
-       /* background-color:black!important;
-        background: url("polaroids.png") no-repeat fixed center; */
         background-size: 400px;
         height: 400px;
     }
@@ -238,8 +236,6 @@ body {
 
 @media (max-width :414px) {
     .myjumbotron {
-       /* background-color:black!important;
-        background: url("polaroids.png") no-repeat fixed center; */
         background-size: 650px;
         height: 600px;
     }
