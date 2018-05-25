@@ -8,40 +8,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
-    <!-- Font Awesome Glyphicons -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
     <!-- Chosen is a jQuery plugin that changes the selections for the user. Makes long, unwieldy select boxes much more user-friendly. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-  
+
+    <link rel="stylesheet" type="text/css" href="static/assets/css/style.css">
 
 </head>
 
-<body>
+<body class="surveybackground">
 
     <div class="container">
 
-        <h2>Survey Questions</h2>
+        <h2 class="title text-center">Survey Questions</h2>
 
         <hr>
 
-        <h3>
-            <strong>About Your Pet</strong>
-        </h3>
-        <h4>Pet's Name (Required)</h4>
-        <input type="text" id="name" class="form-control" value="Scout" required>
+        <h4 class="questions">Pet's Name
+            <span class="asterisk">*</span>
+        </h4>
+        <input type="text" id="name" class="form-control" value="Example: Scout" required>
 
-        <h4>Link to Pet's Photo (Required)</h4>
-        <input type="text" id="photo" class="form-control" value="https://i.imgur.com/h7zLUrW.jpg" required>
+        <h4 class="questions">Link to Pet's Photo
+            <span class="asterisk">*</span>
+        </h4>
+        <input type="text" id="photo" class="form-control" value="Example: https://i.imgur.com/h7zLUrW.jpg" required>
 
         <hr>
-
-        <h3>
-            <strong>Question 1</strong>
-        </h3>
-        <h4>My dog goes crazy when he hears the word W-A-L-K.</h4>
+        <h4 class="questions">
+            <strong>My dog goes crazy when he hears the word W-A-L-K.</strong>
+        </h4>
         <select class="chosen-select" id="question1">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -51,10 +49,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-        <h3>
-            <strong>Question 2</strong>
-        </h3>
-        <h4>My dog LOVES to eat.</h4>
+        <h4 class="questions">
+            <strong>My dog LOVES to eat.</strong>
+        </h4>
         <select class="chosen-select" id="question2">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -64,11 +61,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-
-        <h3>
-            <strong>Question 3</strong>
-        </h3>
-        <h4>My dog and his v-e-t go together like peanut butter and spinach.</h4>
+        <h4 class="questions">
+            <strong>My dog and his v-e-t go together like peanut butter and spinach.</strong>
+        </h4>
         <select class="chosen-select" id="question3">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -78,11 +73,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-
-        <h3>
-            <strong>Question 4</strong>
-        </h3>
-        <h4>My dog loves water more than he loves me.</h4>
+        <h4 class="questions">
+            <strong>My dog loves water more than he loves me.</strong>
+        </h4>
         <select class="chosen-select" id="question4">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -92,11 +85,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-
-        <h3>
-            <strong>Question 5</strong>
-        </h3>
-        <h4>The mailman is my dog's worst enemy.</h4>
+        <h4 class="questions">
+            <strong>The mailman is my dog's worst enemy.</strong>
+        </h4>
         <select class="chosen-select" id="question5">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -106,11 +97,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-
-        <h3>
-            <strong>Question 6</strong>
-        </h3>
-        <h4>My dog is extremely pupular with other dogs and is basically a social pupperfly.</h4>
+        <h4 class="questions">
+            <strong>My dog is extremely pupular with other dogs and is basically a social pupperfly.</strong>
+        </h4>
         <select class="chosen-select" id="question6">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -120,11 +109,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-
-        <h3>
-            <strong>Question 7</strong>
-        </h3>
-        <h4>When my dog isn't lounging on the couch, you can find him hogging the bed.</h4>
+        <h4 class="questions">
+            <strong>When my dog isn't lounging on the couch, you can find him hogging the bed.</strong>
+        </h4>
         <select class="chosen-select" id="question7">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -134,10 +121,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-        <h3>
-            <strong>Question 8</strong>
-        </h3>
-        <h4>Toys run away from my dog for fear that they'll die.</h4>
+        <h4 class="questions">
+            <strong>Toys run away from my dog for fear that they'll die.</strong>
+        </h4>
         <select class="chosen-select" id="question8">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -147,10 +133,9 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-        <h3>
-            <strong>Question 9</strong>
-        </h3>
-        <h4>Squirrels = "OAIEHEOAIHAEOGNEAIOGAEOIGEAIOHTEOAIFJAOEFMEAO!!!!!!!!!!!"</h4>
+        <h4 class="questions">
+            <strong>Squirrels = "OAIEHEOAIHAEOGNEAIOGAEOIGEAIOHTEOAIFJAOEFMEAO!!!!!!!!!!!"</strong>
+        </h4>
         <select class="chosen-select" id="question9">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -160,10 +145,10 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-        <h3>
-            <strong>Question 10</strong>
-        </h3>
-        <h4>My dog's idea of a romantic evening includes a bowl of pupsghetti, and a showing of Jurassic Bark with some pupcorn (preferably with someone they can call their punny... #LOL).</h4>
+        <h4 class="questions">
+            <strong>My dog's idea of a romantic evening includes a bowl of pupsghetti, and a showing of Jurassic Bark with some pupcorn
+                (preferably with someone they can call their punny... #LOL).</strong>
+        </h4>
         <select class="chosen-select" id="question10">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -177,17 +162,19 @@
         <br>
 
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
-            <strong class="fa fa-paw"></strong>
+            <strong class="bone">}</strong>
             Submit</button>
 
         <hr>
         <footer class="footer">
             <div class="container">
                 <p>
-                    <a href="/api/friends" target="_blank">API Fido Friends List</a>             
-                    <strong class="fa fa-paw"></strong>
-                    <a href="https://github.com/rocksteadyrose/friendfinder" target="_blank"> GitHub Repo</a>
-                </p>
+                    <a class="footerlinks" href="/api/friends" target="_blank">API Fido Friends List</a>
+                    <strong>+</strong>
+                    <a class="footerlinks" href="https://github.com/rocksteadyrose/friendfinder" target="_blank"> GitHub Repo</a>
+                    <a class="glyphiconlink" href="/">
+                        <span class="glyphicon glyphicon-home pull-right"></span>
+                    </a>
             </div>
         </footer>
 
@@ -216,6 +203,7 @@
     </div>
 
 </body>
+
 </html>
 
 <script type="text/javascript">
@@ -228,13 +216,13 @@
             disable_search_threshold: 10
         },
         ".chosen-select-no-results": {
-            no_results_text: "Oops, nothing found!"
+            no_results_text: "Nothing found!"
         },
         ".chosen-select-width": {
             width: "95%"
         }
     };
-    
+
     for (var selector in config) {
         $(selector).chosen(config[selector]);
     }
@@ -288,9 +276,8 @@
                 $("#results").modal("toggle");
             });
         } else {
-            alert("Please fill out all fields before submitting!");
+            alert("Please fill out all fields before PUPmitting!");
         }
     });
 
 </script>
-

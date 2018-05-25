@@ -12,6 +12,10 @@ var app = express();
 // Sets an initial port. Takes whatever port is defined by the deployment site by Heroku or the port we've set so it'll work on our local host so we don't have to reconfigure it when we deploy it live.
 var PORT = process.env.PORT || 8080;
 //===================================================================
+// To create a virtual path prefix (where the path does not actually exist in the file system) for files that are served by the express.static function, specify a mount path for the static directory, as shown below:
+var path = require("path");
+app.use('/static', express.static(path.join(__dirname, 'app/public')))
+//===================================================================
 // Sets up the Express app to handle data parsing. Makes it easy for back and front-end to talk to each other
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

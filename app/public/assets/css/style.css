@@ -1,0 +1,191 @@
+@font-face {
+    font-family: "puppybellies";
+    src: url("fonts/puppybellies.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "kschnauzer";
+    src: url("fonts/kschnauzer.ttf");
+    font-weight: normal;
+}
+
+body {
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+}
+
+.myjumbotron {
+    background-color:black!important;
+    background: url("polaroids.png") no-repeat fixed center;
+    background-size: 600px;
+    height: 680px;
+}
+
+.title {
+    font-family: "kschnauzer";
+    font-size: 90px;
+}
+
+.btn-primary, .buttontext {
+    background-color: white;
+    color: black;
+}
+
+.questionbutton {
+    position: absolute;
+    bottom: 40px;
+    left: 500px;
+}
+
+.container {
+    position: relative;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    color: rgb(241, 33, 137);
+}
+
+.btn-primary:link {
+    background-color: rgb(241, 33, 137);
+    color: white;
+}
+
+.btn:active {
+    background-color: white!important;
+    color: rgb(241, 33, 137)!important;
+}
+
+.footerlinks {
+    color: white;
+}
+
+.name {
+    font-family: "kschnauzer";
+    text-shadow: 2px 2px 10px black;
+    color: white!important;
+    font-size: 90px!important;
+    margin-top: -50px;
+}
+
+.header  {
+    color: rgb(241, 33, 137);
+    text-shadow: 2px 2px 2px black;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.footer, .bone, .questions {
+    font-family: "puppybellies";
+}
+
+.asterisk {
+    color: red;
+}
+
+.glyphicon-home {
+    padding-right: 20px;
+}
+
+.glyphiconlink:link {
+    color: black;
+}
+
+.glyphiconlink:visited {
+    color: black;
+}
+
+.glyphiconlink:hover {
+    color: rgb(241, 33, 137);
+}
+
+.chosen-container ul.chosen-results li.highlighted {
+    background-color: black;
+    background-image: none;
+
+}
+
+@media (max-width: 1199px) {
+    .questionbutton {
+        position: absolute;
+        bottom: 40px;
+        left: 400px;
+    }
+}
+
+@media (max-width: 991px) {
+    .questionbutton {
+        position: absolute;
+        bottom: 40px;
+        left: 290px;
+    }
+}
+
+@media (max-width: 767px) {
+    .name {
+        font-size: 90px!important;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 659px) {
+    .myjumbotron {
+            background: url("polaroids.png") no-repeat fixed bottom;
+            background-size: 550px;
+            height: 680px;
+        }
+
+        .questionbutton {
+            position: absolute;
+            bottom: 50px;
+            left: 230px;
+        }
+}
+
+@media (max-width: 620px) {
+    .questionbutton {
+        position: absolute;
+        bottom: 50px;
+        left: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .questionbutton {
+        position: absolute;
+        bottom: 50px;
+        left: 150px;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .name {
+        margin-top: -20px;
+    }
+    
+    .questionbutton {
+        position: absolute;
+        bottom: 50px;
+        left: 100px;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 355px) {
+
+    .myjumbotron {
+        background: url("polaroids.png") repeat;
+        background-size: 50px;
+        height: 200px;
+    }
+}
+  
+    
