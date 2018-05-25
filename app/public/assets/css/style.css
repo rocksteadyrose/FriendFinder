@@ -164,6 +164,13 @@ body {
 
 @media (max-width: 400px) {
 
+    .myjumbotron {
+        background-color:black!important;
+        background: url("polaroids.png") no-repeat fixed center;
+        background-size: 600px;
+        height: 680px;
+    }
+
     .name {
         margin-top: -20px;
     }
@@ -178,14 +185,33 @@ body {
         font-size: 50px;
     }
 }
-
-@media (max-width: 355px) {
-
+ 
+@media (max-width : 375px) {
     .myjumbotron {
-        background: url("polaroids.png") repeat;
-        background-size: 50px;
-        height: 200px;
+       /* background-color:black!important;
+        background: url("polaroids.png") no-repeat fixed center; */
+        background-size: 400px;
+        margin-right: 45px;
+        height: 400px;
+    }
+
+    .name {
+        font-size: 40px!important;
+        text-align: left;
+    }
+
+    .header {
+        padding-top: 20px;
+    }
+
+    .questionbutton {
+        position: absolute;
+        bottom: 50px;
+        left: 80px;
+    }
+    
+    .footer {
+        text-align: center;
+        padding-right: 50px;
     }
 }
-  
-    
