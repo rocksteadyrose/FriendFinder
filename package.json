@@ -1,7 +1,7 @@
 {
   "name": "friendfinder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Helps you find the pawfect pet",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/rocksteadyrose/FriendFinder.git"
   },
-  "author": "",
+  "author": "Leslie Rose",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rocksteadyrose/FriendFinder/issues"
@@ -22,5 +22,6 @@
     "express": "^4.16.3",
     "npm": "^6.0.1",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {}
 }
