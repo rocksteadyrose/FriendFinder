@@ -1,0 +1,16 @@
+.myjumbotron {
+    background-color: pink!important;
+}
+
+.btn-primary {
+    background-color: black;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    color: pink;
+}
+
+hr {
+    border: 2px solid black;
+}

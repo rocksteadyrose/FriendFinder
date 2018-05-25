@@ -29,14 +29,15 @@ module.exports = function (app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
+  //When the app tries to post to this URL, run this function. The function has a request and a response.
   app.post("/api/friends", function (req, res) {
     // This is the user data coming from the user. req.body is available since we're using the body-parser middleware
     var userInfo = req.body;
-    var userScore = req.body.scores;
+    var userScore = userInfo.scores;
     var others = friendsData;
     var sums = [];
 
-    //Loop through the api data
+    // Loop through the api data of friend' data
     for (i = 0; i < friendsData.length; i++) {
       var totalDifference = [];
       var otherScores = friendsData[i].scores;
@@ -44,19 +45,21 @@ module.exports = function (app) {
       //Loop through the scores array of this data
       for (j = 0; j < otherScores.length; j++) {
         var differences = Math.abs(parseInt(userScore[j]) - parseInt(otherScores[j]));
-        totalDifference.push(differences)
+        totalDifference.push(differences);
       }
+
       var sumofDifferences = totalDifference.reduce(
         function (total, num) { return total + num }
         , 0);
-      sums.push(sumofDifferences)
+
+      sums.push(sumofDifferences);
     }
     var min = Math.min.apply(null, sums);
     var selectedDogIndex = sums.indexOf(min);
 
     var match = others[selectedDogIndex];
-    var matchName = others[selectedDogIndex].name;
-    var matchPic = others[selectedDogIndex].photo;
+    var matchName = match.name;
+    var matchPic = match.photo;
 
     //send the match to the front-end/json for the module
     res.json({ matchName, matchPic });

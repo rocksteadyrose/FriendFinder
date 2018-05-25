@@ -1,6 +1,6 @@
 var friendsArray = [{
     "name":"Leia",
-    "photo":"https://i.imgur.com/M9D3eYVt.png",
+    "photo":"https://i.imgur.com/M9D3eYV.png",
     "scores":[
         3,
         5,
