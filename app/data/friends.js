@@ -30,6 +30,22 @@ var friendsArray = [{
       ]
   },
   {
+    "name":"Dude",
+    "photo":"https://3milliondogs.com/blog-assets-two/2014/11/awkwarddog.jpg",
+    "scores":[
+        2,
+        3,
+        4,
+        1,
+        5,
+        2,
+        2,
+        1,
+        4,
+        1
+      ]
+  },
+  {
     "name":"Sassy",
     "photo":"http://www.dogsinduds.com/pictures/sassy-pixie.jpg",
     "scores":[
